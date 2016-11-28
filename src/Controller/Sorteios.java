@@ -8,6 +8,7 @@ package Controller;
 import java.util.Random;
 import javax.swing.DefaultListModel;
 import Model.SorteioStore;
+import java.sql.SQLException;
 
 /**
  *
@@ -25,7 +26,7 @@ public class Sorteios {
         this.quantidadeDeNumeroSorteado = 6;
     }
     
-    public DefaultListModel gerarSorteios(){
+    public DefaultListModel gerarSorteios() throws SQLException{
         String result = ""; 
         Random random = new Random();
         SorteioStore store = new SorteioStore();

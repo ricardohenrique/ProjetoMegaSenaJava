@@ -38,7 +38,7 @@ public class Conexao {
             //Parâmetros da conexão (usuário e senha)
             //Atenção: COLOQUE AQUI O SEU USUÁRIO E A SUA SENHA!
             String usuario = "root";    //Usuário da base, criado anteriormente
-            String senha = "";   //Senha do usuário
+            String senha = "ricardo@123";   //Senha do usuário
  
             //seta a conexão:
             conexao = (Connection) DriverManager.getConnection(url, usuario, senha);
