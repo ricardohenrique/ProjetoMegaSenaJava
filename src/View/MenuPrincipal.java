@@ -34,112 +34,92 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnSorteios = new javax.swing.JButton();
+        btnGerarSorteios = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnSorteios1 = new javax.swing.JButton();
-        btnSorteios2 = new javax.swing.JButton();
-        btnSorteios3 = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
+        btnAnalisarResultados = new javax.swing.JButton();
+        btnJogar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnSorteios.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnSorteios.setText("Gerar Sorteios");
-        btnSorteios.addActionListener(new java.awt.event.ActionListener() {
+        btnGerarSorteios.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnGerarSorteios.setText("Gerar Sorteios");
+        btnGerarSorteios.setMaximumSize(new java.awt.Dimension(190, 45));
+        btnGerarSorteios.setMinimumSize(new java.awt.Dimension(190, 45));
+        btnGerarSorteios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSorteiosActionPerformed(evt);
+                btnGerarSorteiosActionPerformed(evt);
             }
         });
+        getContentPane().add(btnGerarSorteios, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 180, 100));
 
         jLabel1.setText("Copyright © Vestindo Certo");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, -1, -1));
 
-        btnSorteios1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnSorteios1.setText("Gerar Sorteios");
-        btnSorteios1.addActionListener(new java.awt.event.ActionListener() {
+        btnSair.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnSair.setText("Sair");
+        btnSair.setMaximumSize(new java.awt.Dimension(190, 45));
+        btnSair.setMinimumSize(new java.awt.Dimension(190, 45));
+        btnSair.setPreferredSize(new java.awt.Dimension(190, 45));
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSorteios1ActionPerformed(evt);
+                btnSairActionPerformed(evt);
             }
         });
+        getContentPane().add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 180, 100));
 
-        btnSorteios2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnSorteios2.setText("Jogar");
-        btnSorteios2.addActionListener(new java.awt.event.ActionListener() {
+        btnAnalisarResultados.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnAnalisarResultados.setText("Resultados");
+        btnAnalisarResultados.setMaximumSize(new java.awt.Dimension(190, 45));
+        btnAnalisarResultados.setMinimumSize(new java.awt.Dimension(190, 45));
+        btnAnalisarResultados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSorteios2ActionPerformed(evt);
+                btnAnalisarResultadosActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAnalisarResultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 180, 100));
 
-        btnSorteios3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnSorteios3.setText("Estatísticas");
-        btnSorteios3.addActionListener(new java.awt.event.ActionListener() {
+        btnJogar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnJogar.setText("Jogar");
+        btnJogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSorteios3ActionPerformed(evt);
+                btnJogarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnJogar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 180, 100));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Escolha uma das opções abaixo");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, -1, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnSorteios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnSorteios2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btnSorteios3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnSorteios1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(51, 51, 51))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(97, 97, 97))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSorteios3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSorteios, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSorteios1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSorteios2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/trevo-4-folhas.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 410, 320));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSorteiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSorteiosActionPerformed
+    private void btnGerarSorteiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarSorteiosActionPerformed
         Jogos jogos = new Jogos();
         //JOptionPane.showMessageDialog(null, "Peso minimo: " + jogos.popularJogos());
         //jogos.popularJogos();
         //jogos.mostrarJogos();
-    }//GEN-LAST:event_btnSorteiosActionPerformed
+    }//GEN-LAST:event_btnGerarSorteiosActionPerformed
 
-    private void btnSorteios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSorteios1ActionPerformed
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSorteios1ActionPerformed
+    }//GEN-LAST:event_btnSairActionPerformed
 
-    private void btnSorteios2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSorteios2ActionPerformed
+    private void btnAnalisarResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalisarResultadosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSorteios2ActionPerformed
+    }//GEN-LAST:event_btnAnalisarResultadosActionPerformed
 
-    private void btnSorteios3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSorteios3ActionPerformed
+    private void btnJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJogarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSorteios3ActionPerformed
+    }//GEN-LAST:event_btnJogarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,11 +164,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSorteios;
-    private javax.swing.JButton btnSorteios1;
-    private javax.swing.JButton btnSorteios2;
-    private javax.swing.JButton btnSorteios3;
+    private javax.swing.JButton btnAnalisarResultados;
+    private javax.swing.JButton btnGerarSorteios;
+    private javax.swing.JButton btnJogar;
+    private javax.swing.JButton btnSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
