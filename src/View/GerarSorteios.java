@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package View;
+import Controller.Sorteios;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -38,12 +40,12 @@ public class GerarSorteios extends javax.swing.JFrame {
         jLabel2.setText("Este é seu simulador de jogos da Mega Sena");
 
         jToggleButtonGerarSorteios.setText("Gerar Sorteios");
-
-        jListSorteios.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        jToggleButtonGerarSorteios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonGerarSorteiosActionPerformed(evt);
+            }
         });
+
         jScrollPane1.setViewportView(jListSorteios);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -57,9 +59,9 @@ public class GerarSorteios extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jToggleButtonGerarSorteios, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
+                    .addComponent(jToggleButtonGerarSorteios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,6 +77,14 @@ public class GerarSorteios extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jToggleButtonGerarSorteiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonGerarSorteiosActionPerformed
+        // TODO add your handling code here:
+        DefaultListModel dml = new DefaultListModel();
+        Sorteios sorteios = new Sorteios();
+        dml = sorteios.gerarSorteios();
+        jListSorteios.setModel(dml);
+    }//GEN-LAST:event_jToggleButtonGerarSorteiosActionPerformed
 
     /**
      * @param args the command line arguments

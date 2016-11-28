@@ -103,10 +103,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGerarSorteiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarSorteiosActionPerformed
-        Jogos jogos = new Jogos();
-        //JOptionPane.showMessageDialog(null, "Peso minimo: " + jogos.popularJogos());
-        //jogos.popularJogos();
-        //jogos.mostrarJogos();
+        GerarSorteios gerarSoeteios = new GerarSorteios();
+        gerarSoeteios.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnGerarSorteiosActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
