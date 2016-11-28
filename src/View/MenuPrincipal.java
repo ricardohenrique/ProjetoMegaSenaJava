@@ -43,6 +43,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocation(new java.awt.Point(0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnGerarSorteios.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -118,6 +119,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void btnJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJogarActionPerformed
         // TODO add your handling code here:
+        Jogar jogar = new Jogar();
+        jogar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnJogarActionPerformed
 
     /**

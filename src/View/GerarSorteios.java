@@ -5,6 +5,9 @@
  */
 package View;
 import Controller.Sorteios;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 
 /**
@@ -35,6 +38,7 @@ public class GerarSorteios extends javax.swing.JFrame {
         jListSorteios = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(0, 0));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Este é seu simulador de jogos da Mega Sena");
@@ -82,7 +86,11 @@ public class GerarSorteios extends javax.swing.JFrame {
         // TODO add your handling code here:
         DefaultListModel dml = new DefaultListModel();
         Sorteios sorteios = new Sorteios();
-        dml = sorteios.gerarSorteios();
+        try {
+            dml = sorteios.gerarSorteios();
+        } catch (SQLException ex) {
+            Logger.getLogger(GerarSorteios.class.getName()).log(Level.SEVERE, null, ex);
+        }
         jListSorteios.setModel(dml);
     }//GEN-LAST:event_jToggleButtonGerarSorteiosActionPerformed
 

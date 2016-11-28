@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package View;
-
-import javax.swing.JTextField;
+import Controller.Registros;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -29,194 +31,112 @@ public class Jogar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jLabelJogadorN = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txt_nome_jogador_01 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txt_numeros_jogador_01 = new javax.swing.JTextField();
-        txt_nome_jogador_02 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        txt_numeros_jogador_02 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txt_nome_jogador_03 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        txt_numeros_jogador_03 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         btnJogar = new javax.swing.JButton();
+        jTextFieldDezena03 = new javax.swing.JTextField();
+        jTextFieldDezena01 = new javax.swing.JTextField();
+        jTextFieldDezena02 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextFieldDezena06 = new javax.swing.JTextField();
+        jTextFieldDezena04 = new javax.swing.JTextField();
+        jTextFieldDezena05 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Jogar");
+        jLabelJogadorN.setText("Jogador 01");
+        getContentPane().add(jLabelJogadorN, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
 
-        jLabel2.setText("Jogador 1:");
+        jLabel2.setText("Nome:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
-        txt_nome_jogador_01.addActionListener(new java.awt.event.ActionListener() {
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_nome_jogador_01ActionPerformed(evt);
+                txtNomeActionPerformed(evt);
             }
         });
-
-        jLabel3.setText("Jogo 1:");
-
-        txt_numeros_jogador_01.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_numeros_jogador_01ActionPerformed(evt);
-            }
-        });
-
-        txt_nome_jogador_02.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_nome_jogador_02ActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setText("Jogo 2:");
-
-        txt_numeros_jogador_02.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_numeros_jogador_02ActionPerformed(evt);
-            }
-        });
-
-        jLabel5.setText("Jogador 2:");
-
-        txt_nome_jogador_03.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_nome_jogador_03ActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setText("Jogo 3:");
-
-        txt_numeros_jogador_03.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_numeros_jogador_03ActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setText("Jogador 3:");
+        getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 360, -1));
 
         jLabel8.setText("Copyright © Vestindo Certo");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 294, -1, -1));
 
         btnJogar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnJogar.setText("Jogar");
+        btnJogar.setText("Próximo jogo");
         btnJogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnJogarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnJogar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 150, 54));
+        getContentPane().add(jTextFieldDezena03, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 40, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(182, 182, 182)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_nome_jogador_02)
-                            .addComponent(txt_numeros_jogador_02, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_nome_jogador_03)
-                            .addComponent(txt_numeros_jogador_03, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_nome_jogador_01, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_numeros_jogador_01, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(14, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnJogar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(131, 131, 131))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txt_nome_jogador_01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txt_numeros_jogador_01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txt_nome_jogador_02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(txt_numeros_jogador_02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_nome_jogador_03, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txt_numeros_jogador_03, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addComponent(btnJogar, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8))
-        );
+        jTextFieldDezena01.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDezena01ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldDezena01, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 40, 30));
+
+        jTextFieldDezena02.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDezena02ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldDezena02, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 40, 30));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 40, 30));
+        getContentPane().add(jTextFieldDezena06, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 40, 30));
+        getContentPane().add(jTextFieldDezena04, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 40, 30));
+        getContentPane().add(jTextFieldDezena05, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 40, 30));
+        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 40, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_nome_jogador_01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nome_jogador_01ActionPerformed
-        String nome1 = txt_nome_jogador_01.getText();
-    }//GEN-LAST:event_txt_nome_jogador_01ActionPerformed
-
-    private void txt_numeros_jogador_01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_numeros_jogador_01ActionPerformed
-        int jogo1 = Integertxt_numero_jogador_01ro_jogo_01.getText());
-    }//GEN-LAST:event_txt_numeros_jogador_01ActionPerformed
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        //String nome1 = txtNome.getText();
+    }//GEN-LAST:event_txtNomeActionPerformed
    
-    private void txt_nome_jogador_02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nome_jogador_02ActionPerformed
-        String nome2 = txt_nome_jogador_03.getText();
-    }//GEN-LAST:event_txt_nome_jogador_02ActionPerformed
-
-    private void txt_numeros_jogador_02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_numeros_jogador_02ActionPerformed
-        int jogo2 = Integer.parseInt(txt_numeros_jogador_02.getText());
-    }//GEN-LAST:event_txt_numeros_jogador_02ActionPerformed
-
-    private void txt_nome_jogador_03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nome_jogador_03ActionPerformed
-        String nome3 = txt_nome_jogador_03.getText();
-    }//GEN-LAST:event_txt_nome_jogador_03ActionPerformed
-
-    private void txt_numeros_jogador_03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_numeros_jogador_03ActionPerformed
-        int jogo3 = Integer.parseInt(txt_numeros_jogador_03.getText());
-    }//GEN-LAST:event_txt_numeros_jogador_03ActionPerformed
-
     private void btnJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJogarActionPerformed
         // TODO add your handling code here:
+        String dados[] = new String[7];
+        dados[0] = txtNome.getText();
+        dados[1] = jTextFieldDezena01.getText();
+        dados[2] = jTextFieldDezena02.getText();
+        dados[3] = jTextFieldDezena03.getText();
+        dados[4] = jTextFieldDezena04.getText();
+        dados[5] = jTextFieldDezena05.getText();
+        dados[6] = jTextFieldDezena06.getText();
+        
+        Registros registros = new Registros();
+        
+        registros.setNome(dados[0]);
+        registros.setDezena01(Integer.parseInt(dados[1]));
+        registros.setDezena02(Integer.parseInt(dados[2]));
+        registros.setDezena03(Integer.parseInt(dados[3]));
+        registros.setDezena04(Integer.parseInt(dados[4]));
+        registros.setDezena05(Integer.parseInt(dados[5]));
+        registros.setDezena06(Integer.parseInt(dados[6]));
+        
+        try {
+            registros.store();
+        } catch (SQLException ex) {
+            Logger.getLogger(Jogar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        System.out.println("Nome: " + dados[0]);
     }//GEN-LAST:event_btnJogarActionPerformed
+
+    private void jTextFieldDezena01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDezena01ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDezena01ActionPerformed
+
+    private void jTextFieldDezena02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDezena02ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDezena02ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,19 +176,17 @@ public class Jogar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnJogar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField txt_nome_jogador_01;
-    private javax.swing.JTextField txt_nome_jogador_02;
-    private javax.swing.JTextField txt_nome_jogador_03;
-    private javax.swing.JTextField txt_numeros_jogador_01;
-    private javax.swing.JTextField txt_numeros_jogador_02;
-    private javax.swing.JTextField txt_numeros_jogador_03;
+    private javax.swing.JLabel jLabelJogadorN;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextFieldDezena01;
+    private javax.swing.JTextField jTextFieldDezena02;
+    private javax.swing.JTextField jTextFieldDezena03;
+    private javax.swing.JTextField jTextFieldDezena04;
+    private javax.swing.JTextField jTextFieldDezena05;
+    private javax.swing.JTextField jTextFieldDezena06;
+    private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }
