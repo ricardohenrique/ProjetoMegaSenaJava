@@ -28,6 +28,8 @@ public class Sorteios {
     public DefaultListModel gerarSorteios(){
         String result = ""; 
         Random random = new Random();
+        SorteioStore store = new SorteioStore();
+        
         for (this.linha = 0; this.linha < 3000; this.linha++) {
             final int[] sorteio = random.ints(1, 61).distinct().limit(this.quantidadeDeNumeroSorteado).toArray();
             for (this.coluna = 0; this.coluna < this.quantidadeDeNumeroSorteado; this.coluna++) {
@@ -35,6 +37,7 @@ public class Sorteios {
             }
         }
         
+        store.insereSorteio(this.matriz);
         return this.mostrarSorteios();
     }
     
@@ -44,14 +47,12 @@ public class Sorteios {
         String resultado = "", resultadoFinal, resultadoOrdenado = "", strReturn = "";
         int vetorOrdenado[] = new int[6];
         DefaultListModel dml = new DefaultListModel();
-        SorteioStore store = new SorteioStore();
         
         for (this.linha = 0; this.linha < 3000; this.linha++) {
             for(this.coluna = 0; this.coluna < this.quantidadeDeNumeroSorteado; this.coluna++){
                 resultado = resultado + String.format("%1$02d ", this.matriz[this.linha][this.coluna]);
                 vetorOrdenado[this.coluna] = this.matriz[this.linha][this.coluna];
             }
-            store.insereSorteio(vetorOrdenado);
             sort.bubbleSort(vetorOrdenado, this.quantidadeDeNumeroSorteado);
             for (this.coluna = 0; this.coluna < this.quantidadeDeNumeroSorteado; this.coluna++) {
                 resultadoOrdenado = resultadoOrdenado + String.format("%1$02d ", vetorOrdenado[this.coluna]);
