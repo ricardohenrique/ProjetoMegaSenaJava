@@ -31,16 +31,16 @@ public class Jogar extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtNome1 = new javax.swing.JTextField();
+        txt_nome_jogador_01 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtJogo1 = new javax.swing.JTextField();
-        txtNome2 = new javax.swing.JTextField();
+        txt_numeros_jogador_01 = new javax.swing.JTextField();
+        txt_nome_jogador_02 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtJogo2 = new javax.swing.JTextField();
+        txt_numeros_jogador_02 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtNome3 = new javax.swing.JTextField();
+        txt_nome_jogador_03 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        txtJogo3 = new javax.swing.JTextField();
+        txt_numeros_jogador_03 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         btnJogar = new javax.swing.JButton();
@@ -51,47 +51,47 @@ public class Jogar extends javax.swing.JFrame {
 
         jLabel2.setText("Jogador 1:");
 
-        txtNome1.addActionListener(new java.awt.event.ActionListener() {
+        txt_nome_jogador_01.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNome1ActionPerformed(evt);
+                txt_nome_jogador_01ActionPerformed(evt);
             }
         });
 
         jLabel3.setText("Jogo 1:");
 
-        txtJogo1.addActionListener(new java.awt.event.ActionListener() {
+        txt_numeros_jogador_01.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtJogo1ActionPerformed(evt);
+                txt_numeros_jogador_01ActionPerformed(evt);
             }
         });
 
-        txtNome2.addActionListener(new java.awt.event.ActionListener() {
+        txt_nome_jogador_02.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNome2ActionPerformed(evt);
+                txt_nome_jogador_02ActionPerformed(evt);
             }
         });
 
         jLabel4.setText("Jogo 2:");
 
-        txtJogo2.addActionListener(new java.awt.event.ActionListener() {
+        txt_numeros_jogador_02.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtJogo2ActionPerformed(evt);
+                txt_numeros_jogador_02ActionPerformed(evt);
             }
         });
 
         jLabel5.setText("Jogador 2:");
 
-        txtNome3.addActionListener(new java.awt.event.ActionListener() {
+        txt_nome_jogador_03.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNome3ActionPerformed(evt);
+                txt_nome_jogador_03ActionPerformed(evt);
             }
         });
 
         jLabel6.setText("Jogo 3:");
 
-        txtJogo3.addActionListener(new java.awt.event.ActionListener() {
+        txt_numeros_jogador_03.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtJogo3ActionPerformed(evt);
+                txt_numeros_jogador_03ActionPerformed(evt);
             }
         });
 
@@ -126,8 +126,8 @@ public class Jogar extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNome2)
-                            .addComponent(txtJogo2, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txt_nome_jogador_02)
+                            .addComponent(txt_numeros_jogador_02, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -135,8 +135,8 @@ public class Jogar extends javax.swing.JFrame {
                             .addComponent(jLabel6))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNome3)
-                            .addComponent(txtJogo3, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txt_nome_jogador_03)
+                            .addComponent(txt_numeros_jogador_03, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -144,8 +144,8 @@ public class Jogar extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtJogo1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txt_nome_jogador_01, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_numeros_jogador_01, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(14, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -160,27 +160,27 @@ public class Jogar extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtNome1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_nome_jogador_01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtJogo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_numeros_jogador_01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(txtNome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_nome_jogador_02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(txtJogo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_numeros_jogador_02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNome3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_nome_jogador_03, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(txtJogo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_numeros_jogador_03, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addComponent(btnJogar, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -190,29 +190,29 @@ public class Jogar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome1ActionPerformed
-        String nome1 = txtNome1.getText();
-    }//GEN-LAST:event_txtNome1ActionPerformed
+    private void txt_nome_jogador_01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nome_jogador_01ActionPerformed
+        String nome1 = txt_nome_jogador_01.getText();
+    }//GEN-LAST:event_txt_nome_jogador_01ActionPerformed
 
-    private void txtJogo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtJogo1ActionPerformed
-        int jogo1 = Integer.parseInt(txtJogo1.getText());
-    }//GEN-LAST:event_txtJogo1ActionPerformed
+    private void txt_numeros_jogador_01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_numeros_jogador_01ActionPerformed
+        int jogo1 = Integertxt_numero_jogador_01ro_jogo_01.getText());
+    }//GEN-LAST:event_txt_numeros_jogador_01ActionPerformed
    
-    private void txtNome2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome2ActionPerformed
-        String nome2 = txtNome3.getText();
-    }//GEN-LAST:event_txtNome2ActionPerformed
+    private void txt_nome_jogador_02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nome_jogador_02ActionPerformed
+        String nome2 = txt_nome_jogador_03.getText();
+    }//GEN-LAST:event_txt_nome_jogador_02ActionPerformed
 
-    private void txtJogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtJogo2ActionPerformed
-        int jogo2 = Integer.parseInt(txtJogo2.getText());
-    }//GEN-LAST:event_txtJogo2ActionPerformed
+    private void txt_numeros_jogador_02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_numeros_jogador_02ActionPerformed
+        int jogo2 = Integer.parseInt(txt_numeros_jogador_02.getText());
+    }//GEN-LAST:event_txt_numeros_jogador_02ActionPerformed
 
-    private void txtNome3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome3ActionPerformed
-        String nome3 = txtNome3.getText();
-    }//GEN-LAST:event_txtNome3ActionPerformed
+    private void txt_nome_jogador_03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nome_jogador_03ActionPerformed
+        String nome3 = txt_nome_jogador_03.getText();
+    }//GEN-LAST:event_txt_nome_jogador_03ActionPerformed
 
-    private void txtJogo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtJogo3ActionPerformed
-        int jogo3 = Integer.parseInt(txtJogo3.getText());
-    }//GEN-LAST:event_txtJogo3ActionPerformed
+    private void txt_numeros_jogador_03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_numeros_jogador_03ActionPerformed
+        int jogo3 = Integer.parseInt(txt_numeros_jogador_03.getText());
+    }//GEN-LAST:event_txt_numeros_jogador_03ActionPerformed
 
     private void btnJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJogarActionPerformed
         // TODO add your handling code here:
@@ -264,11 +264,11 @@ public class Jogar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField txtJogo1;
-    private javax.swing.JTextField txtJogo2;
-    private javax.swing.JTextField txtJogo3;
-    private javax.swing.JTextField txtNome1;
-    private javax.swing.JTextField txtNome2;
-    private javax.swing.JTextField txtNome3;
+    private javax.swing.JTextField txt_nome_jogador_01;
+    private javax.swing.JTextField txt_nome_jogador_02;
+    private javax.swing.JTextField txt_nome_jogador_03;
+    private javax.swing.JTextField txt_numeros_jogador_01;
+    private javax.swing.JTextField txt_numeros_jogador_02;
+    private javax.swing.JTextField txt_numeros_jogador_03;
     // End of variables declaration//GEN-END:variables
 }
