@@ -117,7 +117,6 @@ public class Jogar extends javax.swing.JFrame {
    
     private void btnJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJogarActionPerformed
         // TODO add your handling code here:
-        String controle = "";
         String dados[] = new String[7];
         dados[0] = txtNome.getText();
         dados[1] = jTextFieldDezena01.getText();

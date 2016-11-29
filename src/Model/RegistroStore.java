@@ -23,13 +23,6 @@ public class RegistroStore {
         
         try {
             Conexao conexao = new Conexao();
-            String delete = "delete from registros where id != 0;";
-            PreparedStatement comando = conexao.getConexao().prepareStatement(delete);
-            comando.executeUpdate(delete);
-        }catch(SQLException sqlEx){
-            System.out.println(sqlEx.getMessage());
-        }finally{
-            Conexao conexao = new Conexao();
             PreparedStatement stmt = conexao.getConexao().prepareStatement(sql);
 
             stmt.setString(1, registro.getNome());
@@ -46,6 +39,8 @@ public class RegistroStore {
             stmt.executeBatch();
             stmt.close();
             conexao.getConexao().close();
+        }catch(SQLException sqlEx){
+            System.out.println(sqlEx.getMessage());
         }
     }
 }

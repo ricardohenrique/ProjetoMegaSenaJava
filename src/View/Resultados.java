@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package View;
-
+import Controller.Registros;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Ricardo Mota
@@ -15,7 +17,26 @@ public class Resultados extends javax.swing.JFrame {
      * Creates new form Resultados
      */
     public Resultados() {
+        String nome = "", jogo = "", resultadoFinal = "";
         initComponents();
+        List<Registros> listaDeRegistros = new ArrayList<Registros>();
+        Registros registros = new Registros();
+        listaDeRegistros = registros.getRegistros();
+        
+        for (Registros registrosLocal : listaDeRegistros) { //Iterator: Para cada carro na list de carros...
+            nome = registrosLocal.getNome();
+            jogo = (
+                        registrosLocal.getDezena01() + " " + 
+                        registrosLocal.getDezena02() + " " + 
+                        registrosLocal.getDezena03() + " " + 
+                        registrosLocal.getDezena04() + " " + 
+                        registrosLocal.getDezena05() + " " + 
+                        registrosLocal.getDezena06()
+                    );
+            
+            resultadoFinal += "<b>" + nome + "</b> " + jogo + "<br>";
+        }
+        jLabelDadosDoBanco.setText("<html><body>"+resultadoFinal+"</body></html>");
     }
 
     /**
@@ -27,18 +48,17 @@ public class Resultados extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1 = new javax.swing.JLabel();
+        jLabelDadosDoBanco = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("Resultados");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
+
+        jLabelDadosDoBanco.setText("DADOS DO BANCO");
+        getContentPane().add(jLabelDadosDoBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 380, 90));
 
         setSize(new java.awt.Dimension(416, 339));
         setLocationRelativeTo(null);
@@ -80,5 +100,7 @@ public class Resultados extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelDadosDoBanco;
     // End of variables declaration//GEN-END:variables
 }

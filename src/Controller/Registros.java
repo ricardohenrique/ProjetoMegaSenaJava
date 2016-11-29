@@ -6,7 +6,10 @@
 package Controller;
 
 import Model.RegistroStore;
+import Model.RegistroGet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Ricardo Mota
@@ -79,5 +82,14 @@ public class Registros {
     public void store() throws SQLException{
         RegistroStore registroStore = new RegistroStore();
         registroStore.insereRegistro(this);
+    }
+    
+    public List<Registros> getRegistros(){
+        String dados[] = new String[7];
+        RegistroGet registroGet = new RegistroGet();
+        
+        List<Registros> listaDeRegistros = new ArrayList<Registros>();
+        listaDeRegistros = registroGet.getRegistros();
+        return listaDeRegistros;
     }
 }

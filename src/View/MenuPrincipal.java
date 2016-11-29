@@ -115,6 +115,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void btnAnalisarResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalisarResultadosActionPerformed
         // TODO add your handling code here:
+        Resultados resultados = new Resultados();
+        resultados.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnAnalisarResultadosActionPerformed
 
     private void btnJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJogarActionPerformed
