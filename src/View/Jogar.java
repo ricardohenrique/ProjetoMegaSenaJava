@@ -157,36 +157,38 @@ public class Jogar extends javax.swing.JFrame {
         
         controle = registros.validateRegistro(dados);
         if("".equals(controle)){
-            JOptionPane.showMessageDialog(null, "OK ", "INFORMATION_MESSAGE", JOptionPane.INFORMATION_MESSAGE);
+            //INSTANCIO O OBJETO DE REGISTRO COM OS DADOS DO JFRAME
+            registros.setNome(dados[0]);
+            registros.setDezena01(Integer.parseInt(dados[1]));
+            registros.setDezena02(Integer.parseInt(dados[2]));
+            registros.setDezena03(Integer.parseInt(dados[3]));
+            registros.setDezena04(Integer.parseInt(dados[4]));
+            registros.setDezena05(Integer.parseInt(dados[5]));
+            registros.setDezena06(Integer.parseInt(dados[6]));
+        
+            try {
+                registros.store();
+            } catch (SQLException ex) {
+                Logger.getLogger(Jogar.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                JOptionPane.showMessageDialog(null, "Registro inserido com sucesso!", null, JOptionPane.INFORMATION_MESSAGE);
+                if(jLabelJogadorN.getText() == "Jogador 01" && jLabelControle.getText() == "1/3"){
+                    jLabelJogadorN.setText("Jogador 02");
+                    jLabelControle.setText("2/3");
+                }else if(jLabelJogadorN.getText() == "Jogador 02" && jLabelControle.getText() == "2/3"){
+                    jLabelJogadorN.setText("Jogador 03");
+                    jLabelControle.setText("3/3");
+                    btnJogar.setText("Finalizar");
+                }else{
+                    btnJogar.setVisible(false);
+                    JOptionPane.showMessageDialog(null, "Agora você pode verificar os resultados!", null, JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+
+        
         }else{
             JOptionPane.showMessageDialog(null, "Algo deu errado: "+controle, "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE);
         }
-        //INSTANCIO O OBJETO DE REGISTRO COM OS DADOS DO JFRAME
-//        registros.setNome(dados[0]);
-//        registros.setDezena01(Integer.parseInt(dados[1]));
-//        registros.setDezena02(Integer.parseInt(dados[2]));
-//        registros.setDezena03(Integer.parseInt(dados[3]));
-//        registros.setDezena04(Integer.parseInt(dados[4]));
-//        registros.setDezena05(Integer.parseInt(dados[5]));
-//        registros.setDezena06(Integer.parseInt(dados[6]));
-        
-//        try {
-//            registros.store();
-//        } catch (SQLException ex) {
-//            Logger.getLogger(Jogar.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-        
-//        if(jLabelJogadorN.getText() == "Jogador 01" && jLabelControle.getText() == "1/3"){
-//            jLabelJogadorN.setText("Jogador 02");
-//            jLabelControle.setText("2/3");
-//        }else if(jLabelJogadorN.getText() == "Jogador 02" && jLabelControle.getText() == "2/3"){
-//            jLabelJogadorN.setText("Jogador 03");
-//            jLabelControle.setText("3/3");
-//            btnJogar.setText("Finalizar");
-//        }else{
-//            btnJogar.setVisible(false);
-//        }
-        
     }//GEN-LAST:event_btnJogarActionPerformed
 
     private void jTextFieldDezena01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDezena01ActionPerformed

@@ -100,10 +100,11 @@ public class Registros {
         strReturn += this.validateRegistroNumbers(dados);
         if(!"".equals(strReturn)) return strReturn;
         strReturn += this.validateRegistroRepetidos(dados);
+        if(!"".equals(strReturn)) return strReturn;
+        strReturn += this.validateRegistroRange(dados);
         
         return strReturn;
     }
-    
     
     public String validateRegistroPreenchimento(String dados[]){
         String strReturn = ""; //String de retorno final
@@ -157,5 +158,22 @@ public class Registros {
         
         return strReturn;
     }
+        
+    public String validateRegistroRange(String dados[]){
+        String strReturn = ""; //String de retorno final
+        int numeros[] = new int[6]; //Vetor onde vai ficar os numeros jogados
 
+        for (int i = 0; i < 6; i++)
+            numeros[i] = Integer.parseInt(dados[i+1]);
+
+        //Verificar se existem números repitidos no vetor
+        for (int i = 0; i < numeros.length; i++) { 
+            if (numeros[i] > 60 || numeros[i] < 1) { 
+                strReturn += "Os números devem estar entre 1 e 60; ";
+                return strReturn;
+            } 
+        }
+        
+        return strReturn;
+    }
 }
