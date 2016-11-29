@@ -93,7 +93,8 @@ public class Jogar extends javax.swing.JFrame {
         getContentPane().add(jTextFieldDezena05, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 40, 30));
         getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 40, 30));
 
-        pack();
+        setSize(new java.awt.Dimension(416, 349));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
@@ -127,6 +128,7 @@ public class Jogar extends javax.swing.JFrame {
             Logger.getLogger(Jogar.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        jLabelJogadorN.setText("Jogador 02");
         System.out.println("Nome: " + dados[0]);
     }//GEN-LAST:event_btnJogarActionPerformed
 
