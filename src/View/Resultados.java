@@ -33,8 +33,7 @@ public class Resultados extends javax.swing.JFrame {
                         registrosLocal.getDezena05() + " " + 
                         registrosLocal.getDezena06()
                     );
-            
-            resultadoFinal += "<b>" + nome + "</b> " + jogo + "<br>";
+            resultadoFinal += "<b>" + nome + "</b> <blockquote>" + jogo + "</blockquote>";
         }
         jLabelDadosDoBanco.setText("<html><body>"+resultadoFinal+"</body></html>");
     }
@@ -50,6 +49,9 @@ public class Resultados extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabelDadosDoBanco = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jButtonVoltar = new javax.swing.JButton();
+        jButtonAnalisarJogos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -57,12 +59,33 @@ public class Resultados extends javax.swing.JFrame {
         jLabel1.setText("Resultados");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
 
+        jLabelDadosDoBanco.setBackground(new java.awt.Color(255, 0, 255));
         jLabelDadosDoBanco.setText("DADOS DO BANCO");
-        getContentPane().add(jLabelDadosDoBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 380, 90));
+        getContentPane().add(jLabelDadosDoBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 380, 150));
+
+        jLabel2.setText("Ultimos Jogos");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+
+        jButtonVoltar.setText("Voltar");
+        jButtonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVoltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 160, 60));
+
+        jButtonAnalisarJogos.setText("Analisar Jogos");
+        getContentPane().add(jButtonAnalisarJogos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 160, 60));
 
         setSize(new java.awt.Dimension(416, 339));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed
+        MenuPrincipal menuPrincipal = new MenuPrincipal();
+        menuPrincipal.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButtonVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -100,7 +123,10 @@ public class Resultados extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAnalisarJogos;
+    private javax.swing.JButton jButtonVoltar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelDadosDoBanco;
     // End of variables declaration//GEN-END:variables
 }
