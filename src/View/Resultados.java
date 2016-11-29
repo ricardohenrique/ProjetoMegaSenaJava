@@ -14,8 +14,8 @@ import java.util.List;
 public class Resultados extends javax.swing.JFrame {
 
     public Resultados() {
-        String nome = "", jogo = "", resultadoFinal = "";
         initComponents();
+        String nome = "", jogo = "", resultadoFinal = "";
         List<Registros> listaDeRegistros = new ArrayList<Registros>();
         Registros registros = new Registros();
         listaDeRegistros = registros.getRegistros();
@@ -81,6 +81,11 @@ public class Resultados extends javax.swing.JFrame {
         jButtonAnalisarJogos.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
         jButtonAnalisarJogos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/icone-ok.png"))); // NOI18N
         jButtonAnalisarJogos.setText("Analisar");
+        jButtonAnalisarJogos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAnalisarJogosActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonAnalisarJogos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 160, 60));
 
         jLabel8.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
@@ -100,6 +105,28 @@ public class Resultados extends javax.swing.JFrame {
         menuPrincipal.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButtonVoltarActionPerformed
+
+    private void jButtonAnalisarJogosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnalisarJogosActionPerformed
+        int count = 0;
+        int jogo[][] = new int[3][6];
+        List<Registros> listaDeRegistros = new ArrayList<Registros>();
+        Registros registros = new Registros();
+        listaDeRegistros = registros.getRegistros();
+        
+        for (Registros registrosLocal : listaDeRegistros) { //Iterator: Para cada carro na list de carros...
+            jogo[count][0] = registrosLocal.getDezena01(); 
+            jogo[count][1] = registrosLocal.getDezena02();
+            jogo[count][2] = registrosLocal.getDezena03();
+            jogo[count][3] = registrosLocal.getDezena04();
+            jogo[count][4] = registrosLocal.getDezena05();
+            jogo[count][5] = registrosLocal.getDezena06();
+            count++;
+        }
+        
+        for (int i = 0; i < 3; i++) {
+            System.out.println(jogo[i][0] + " | " + jogo[i][1] + " | " + jogo[i][2] + " | " + jogo[i][3] + " | " + jogo[i][4] + " | " + jogo[i][05] + " | ");
+        }
+    }//GEN-LAST:event_jButtonAnalisarJogosActionPerformed
 
     /**
      * @param args the command line arguments

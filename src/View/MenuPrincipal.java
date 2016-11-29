@@ -4,12 +4,6 @@
  * and open the template in the editor.
  */
 package View;
-
-import java.awt.Color;
-import javax.swing.JOptionPane;
-import Controller.Jogos;
-import Controller.Jogos;
-
 /**
  *
  * @author internet
@@ -45,7 +39,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
         setMinimumSize(new java.awt.Dimension(380, 310));
-        setPreferredSize(new java.awt.Dimension(400, 320));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnGerarSorteios.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
