@@ -5,7 +5,7 @@
  */
 package Model;
 
-import Controller.Registros;
+import Controller.ControllerRegistros;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -18,21 +18,21 @@ import java.util.List;
 public class RegistroGet {
     
    //Método que retorna a lsta de carros, com todos os carros do sistema
-    public List<Registros> getRegistros() {
+    public List<ControllerRegistros> getRegistros() {
  
         try {
             Conexao con = new Conexao();
             con.getConexao();
             
-            String sql = "select * from registros;";
+            String sql = "select * from registros order by id desc;";
             
             PreparedStatement comando = con.getConexao().prepareStatement(sql);
             ResultSet resultado = comando.executeQuery();
  
-            List<Registros> listaDeRegistros = new ArrayList<Registros>();
+            List<ControllerRegistros> listaDeRegistros = new ArrayList<ControllerRegistros>();
  
             while (resultado.next()) {
-                Registros registro = new Registros();
+                ControllerRegistros registro = new ControllerRegistros();
                 registro.setNome(resultado.getString("nome"));
                 registro.setDezena01(resultado.getInt("dezena_01"));
                 registro.setDezena02(resultado.getInt("dezena_02"));

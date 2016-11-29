@@ -14,13 +14,13 @@ import java.sql.SQLException;
  *
  * @author Ricardo Mota
  */
-public class Sorteios {
+public class ControllerSorteios {
     public int linha;
     public int coluna;
     public int matriz[][] = new int[3000][6];
     public int quantidadeDeNumeroSorteado;
     
-    public Sorteios(){
+    public ControllerSorteios(){
         this.linha = 0;
         this.coluna = 0;
         this.quantidadeDeNumeroSorteado = 6;
@@ -44,7 +44,7 @@ public class Sorteios {
     
         
     public DefaultListModel mostrarSorteios(){
-        Sort sort = new Sort();
+        ControllerFerramentas sort = new ControllerFerramentas();
         String resultado = "", resultadoFinal, resultadoOrdenado = "", strReturn = "";
         int vetorOrdenado[] = new int[6];
         DefaultListModel dml = new DefaultListModel();

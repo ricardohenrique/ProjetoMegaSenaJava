@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package View;
-import Controller.Sorteios;
+import Controller.ControllerSorteios;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -82,7 +82,7 @@ public class GerarSorteios extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/mega-sena-background.jpg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 420, 340));
 
-        setSize(new java.awt.Dimension(400, 342));
+        setSize(new java.awt.Dimension(422, 360));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -97,7 +97,7 @@ public class GerarSorteios extends javax.swing.JFrame {
         // TODO add your handling code here:
         //ERROR_MESSAGE, PLAIN_MESSAGE, INFORMATION_MESSAGE
         DefaultListModel dml = new DefaultListModel();
-        Sorteios sorteios = new Sorteios();
+        ControllerSorteios sorteios = new ControllerSorteios();
         try {
             dml = sorteios.gerarSorteios();
         } catch (SQLException ex) {

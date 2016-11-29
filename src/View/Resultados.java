@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package View;
-import Controller.Registros;
+import Controller.ControllerRegistros;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -15,12 +15,14 @@ public class Resultados extends javax.swing.JFrame {
 
     public Resultados() {
         initComponents();
+        int count = 0;
         String nome = "", jogo = "", resultadoFinal = "";
-        List<Registros> listaDeRegistros = new ArrayList<Registros>();
-        Registros registros = new Registros();
+        List<ControllerRegistros> listaDeRegistros = new ArrayList<ControllerRegistros>();
+        ControllerRegistros registros = new ControllerRegistros();
         listaDeRegistros = registros.getRegistros();
         
-        for (Registros registrosLocal : listaDeRegistros) { //Iterator: Para cada carro na list de carros...
+        for (ControllerRegistros registrosLocal : listaDeRegistros) {
+            count++;
             nome = registrosLocal.getNome();
             jogo = (
                         registrosLocal.getDezena01() + " " + 
@@ -31,6 +33,7 @@ public class Resultados extends javax.swing.JFrame {
                         registrosLocal.getDezena06()
                     );
             resultadoFinal += "<b>" + nome + "</b> <blockquote>" + jogo + "</blockquote>";
+            if(count == 3) break;
         }
         jLabelDadosDoBanco.setText("<html><body>"+resultadoFinal+"</body></html>");
     }
@@ -96,7 +99,7 @@ public class Resultados extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/mega-sena-background.jpg"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 420, 340));
 
-        setSize(new java.awt.Dimension(400, 342));
+        setSize(new java.awt.Dimension(424, 361));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -109,11 +112,11 @@ public class Resultados extends javax.swing.JFrame {
     private void jButtonAnalisarJogosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnalisarJogosActionPerformed
         int count = 0;
         int jogo[][] = new int[3][6];
-        List<Registros> listaDeRegistros = new ArrayList<Registros>();
-        Registros registros = new Registros();
+        List<ControllerRegistros> listaDeRegistros = new ArrayList<ControllerRegistros>();
+        ControllerRegistros registros = new ControllerRegistros();
         listaDeRegistros = registros.getRegistros();
         
-        for (Registros registrosLocal : listaDeRegistros) { //Iterator: Para cada carro na list de carros...
+        for (ControllerRegistros registrosLocal : listaDeRegistros) { //Iterator: Para cada carro na list de carros...
             jogo[count][0] = registrosLocal.getDezena01(); 
             jogo[count][1] = registrosLocal.getDezena02();
             jogo[count][2] = registrosLocal.getDezena03();
@@ -121,6 +124,7 @@ public class Resultados extends javax.swing.JFrame {
             jogo[count][4] = registrosLocal.getDezena05();
             jogo[count][5] = registrosLocal.getDezena06();
             count++;
+            if(count == 3) break;
         }
         
         for (int i = 0; i < 3; i++) {

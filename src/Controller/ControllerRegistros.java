@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author Ricardo Mota
  */
-public class Registros {
+public class ControllerRegistros {
     private String nome;
     private int dezena01;
     private int dezena02;
@@ -84,10 +84,10 @@ public class Registros {
         registroStore.insereRegistro(this);
     }
     
-    public List<Registros> getRegistros(){
+    public List<ControllerRegistros> getRegistros(){
         RegistroGet registroGet = new RegistroGet();
         
-        List<Registros> listaDeRegistros = new ArrayList<Registros>();
+        List<ControllerRegistros> listaDeRegistros = new ArrayList<ControllerRegistros>();
         listaDeRegistros = registroGet.getRegistros();
         return listaDeRegistros;
     }

@@ -18,7 +18,7 @@ public class Jogos {
     public int quantidadeDeNumeroSorteado;
     public int matriz[][] = new int[3000][6];
     public int countNumeroX[][] = new int[61][2];
-    public Sort sort = new Sort();
+    public ControllerFerramentas sort = new ControllerFerramentas();
     public Scanner scanner = new Scanner(System.in);
     
     public Jogos(){

@@ -3,7 +3,7 @@ package Controller;
  *
  * @author terced-ricardoh
  */
-public class Sort {
+public class ControllerFerramentas {
     
     public void bubbleSort(int vet[], int tam){
 

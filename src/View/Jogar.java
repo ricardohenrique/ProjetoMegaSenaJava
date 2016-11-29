@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package View;
-import Controller.Registros;
+import Controller.ControllerRegistros;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -132,7 +132,7 @@ public class Jogar extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/mega-sena-background.jpg"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 420, 340));
 
-        setSize(new java.awt.Dimension(400, 342));
+        setSize(new java.awt.Dimension(425, 362));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -143,7 +143,7 @@ public class Jogar extends javax.swing.JFrame {
     private void btnJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJogarActionPerformed
         // setado as variaveis e objetos
         String dados[] = new String[7];
-        Registros registros = new Registros();
+        ControllerRegistros registros = new ControllerRegistros();
         String controle, controleRepetidos;
         
         // PEGO TODOS OS DADOS DO JFRAME

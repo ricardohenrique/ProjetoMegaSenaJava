@@ -7,7 +7,7 @@ package Model;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import Controller.Registros;
+import Controller.ControllerRegistros;
 
 /**
  *
@@ -15,7 +15,7 @@ import Controller.Registros;
  */
 public class RegistroStore {
     
-    public void insereRegistro(Registros registro) throws SQLException {
+    public void insereRegistro(ControllerRegistros registro) throws SQLException {
         String sql = "";
         sql += "insert into registros (`nome`, `dezena_01`, `dezena_02`, `dezena_03`, `dezena_04`, `dezena_05`, `dezena_06`)";
         sql += " VALUES ";
