@@ -33,15 +33,25 @@ public class GerarSorteios extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jToggleButtonGerarSorteios = new javax.swing.JToggleButton();
+        jToggleButtonVoltar = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListSorteios = new javax.swing.JList<>();
+        jToggleButtonGerarSorteios = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Este é seu simulador de jogos da Mega Sena");
+
+        jToggleButtonVoltar.setText("Voltar");
+        jToggleButtonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonVoltarActionPerformed(evt);
+            }
+        });
+
+        jScrollPane1.setViewportView(jListSorteios);
 
         jToggleButtonGerarSorteios.setText("Gerar Sorteios");
         jToggleButtonGerarSorteios.addActionListener(new java.awt.event.ActionListener() {
@@ -50,22 +60,23 @@ public class GerarSorteios extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane1.setViewportView(jListSorteios);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(67, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(63, 63, 63))
             .addGroup(layout.createSequentialGroup()
                 .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
-                    .addComponent(jToggleButtonGerarSorteios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jToggleButtonGerarSorteios, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jToggleButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,14 +85,23 @@ public class GerarSorteios extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButtonGerarSorteios, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jToggleButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButtonGerarSorteios, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12))
         );
 
         setSize(new java.awt.Dimension(416, 334));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jToggleButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonVoltarActionPerformed
+        // TODO add your handling code here:
+        MenuPrincipal menuPrincipal = new MenuPrincipal();
+        menuPrincipal.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jToggleButtonVoltarActionPerformed
 
     private void jToggleButtonGerarSorteiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonGerarSorteiosActionPerformed
         // TODO add your handling code here:
@@ -142,5 +162,6 @@ public class GerarSorteios extends javax.swing.JFrame {
     private javax.swing.JList<String> jListSorteios;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToggleButton jToggleButtonGerarSorteios;
+    private javax.swing.JToggleButton jToggleButtonVoltar;
     // End of variables declaration//GEN-END:variables
 }

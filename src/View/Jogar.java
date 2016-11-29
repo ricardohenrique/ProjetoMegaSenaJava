@@ -44,6 +44,8 @@ public class Jogar extends javax.swing.JFrame {
         jTextFieldDezena04 = new javax.swing.JTextField();
         jTextFieldDezena05 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
+        btnVoltar = new javax.swing.JButton();
+        jLabelControle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -71,7 +73,7 @@ public class Jogar extends javax.swing.JFrame {
                 btnJogarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnJogar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 150, 54));
+        getContentPane().add(btnJogar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 150, 54));
         getContentPane().add(jTextFieldDezena03, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 40, 30));
 
         jTextFieldDezena01.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +95,18 @@ public class Jogar extends javax.swing.JFrame {
         getContentPane().add(jTextFieldDezena05, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 40, 30));
         getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 40, 30));
 
+        btnVoltar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 150, 54));
+
+        jLabelControle.setText("1/3");
+        getContentPane().add(jLabelControle, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, -1));
+
         setSize(new java.awt.Dimension(416, 349));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -103,6 +117,7 @@ public class Jogar extends javax.swing.JFrame {
    
     private void btnJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJogarActionPerformed
         // TODO add your handling code here:
+        String controle = "";
         String dados[] = new String[7];
         dados[0] = txtNome.getText();
         dados[1] = jTextFieldDezena01.getText();
@@ -128,8 +143,17 @@ public class Jogar extends javax.swing.JFrame {
             Logger.getLogger(Jogar.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        jLabelJogadorN.setText("Jogador 02");
-        System.out.println("Nome: " + dados[0]);
+        if(jLabelJogadorN.getText() == "Jogador 01" && jLabelControle.getText() == "1/3"){
+            jLabelJogadorN.setText("Jogador 02");
+            jLabelControle.setText("2/3");
+        }else if(jLabelJogadorN.getText() == "Jogador 02" && jLabelControle.getText() == "2/3"){
+            jLabelJogadorN.setText("Jogador 03");
+            jLabelControle.setText("3/3");
+            btnJogar.setText("Finalizar");
+        }else{
+            btnJogar.setVisible(false);
+        }
+        
     }//GEN-LAST:event_btnJogarActionPerformed
 
     private void jTextFieldDezena01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDezena01ActionPerformed
@@ -139,6 +163,13 @@ public class Jogar extends javax.swing.JFrame {
     private void jTextFieldDezena02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDezena02ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldDezena02ActionPerformed
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        // TODO add your handling code here:
+        MenuPrincipal menuPrincipal = new MenuPrincipal();
+        menuPrincipal.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,8 +209,10 @@ public class Jogar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnJogar;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabelControle;
     private javax.swing.JLabel jLabelJogadorN;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField8;
