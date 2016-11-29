@@ -13,9 +13,6 @@ import java.util.List;
  */
 public class Resultados extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Resultados
-     */
     public Resultados() {
         String nome = "", jogo = "", resultadoFinal = "";
         initComponents();
@@ -77,7 +74,7 @@ public class Resultados extends javax.swing.JFrame {
         jButtonAnalisarJogos.setText("Analisar Jogos");
         getContentPane().add(jButtonAnalisarJogos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 160, 60));
 
-        setSize(new java.awt.Dimension(416, 339));
+        setSize(new java.awt.Dimension(400, 320));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

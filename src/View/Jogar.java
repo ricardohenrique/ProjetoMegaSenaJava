@@ -15,9 +15,6 @@ import java.util.logging.Logger;
  */
 public class Jogar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Jogar
-     */
     public Jogar() {
         initComponents();
     }
@@ -64,7 +61,7 @@ public class Jogar extends javax.swing.JFrame {
         getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 360, -1));
 
         jLabel8.setText("Copyright © Vestindo Certo");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 294, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
 
         btnJogar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnJogar.setText("Próximo jogo");
@@ -105,9 +102,9 @@ public class Jogar extends javax.swing.JFrame {
         getContentPane().add(btnVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 150, 54));
 
         jLabelControle.setText("1/3");
-        getContentPane().add(jLabelControle, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, -1));
+        getContentPane().add(jLabelControle, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, -1, 20));
 
-        setSize(new java.awt.Dimension(416, 349));
+        setSize(new java.awt.Dimension(400, 342));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

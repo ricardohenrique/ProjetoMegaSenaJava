@@ -44,9 +44,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
+        setMinimumSize(new java.awt.Dimension(380, 310));
+        setPreferredSize(new java.awt.Dimension(400, 320));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnGerarSorteios.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnGerarSorteios.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        btnGerarSorteios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/trevo-icone.png"))); // NOI18N
         btnGerarSorteios.setText("Gerar Sorteios");
         btnGerarSorteios.setMaximumSize(new java.awt.Dimension(190, 45));
         btnGerarSorteios.setMinimumSize(new java.awt.Dimension(190, 45));
@@ -57,10 +60,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(btnGerarSorteios, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 180, 100));
 
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setText("Copyright © Vestindo Certo");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, 20));
 
-        btnSair.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnSair.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/icone-fechar.png"))); // NOI18N
         btnSair.setText("Sair");
         btnSair.setMaximumSize(new java.awt.Dimension(190, 45));
         btnSair.setMinimumSize(new java.awt.Dimension(190, 45));
@@ -70,9 +75,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 btnSairActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 180, 100));
+        getContentPane().add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 160, 180, 100));
 
-        btnAnalisarResultados.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnAnalisarResultados.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        btnAnalisarResultados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/icone-ok.png"))); // NOI18N
         btnAnalisarResultados.setText("Resultados");
         btnAnalisarResultados.setMaximumSize(new java.awt.Dimension(190, 45));
         btnAnalisarResultados.setMinimumSize(new java.awt.Dimension(190, 45));
@@ -83,21 +89,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(btnAnalisarResultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 180, 100));
 
-        btnJogar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnJogar.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        btnJogar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/jogar-icone.png"))); // NOI18N
         btnJogar.setText("Jogar");
         btnJogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnJogarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnJogar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 180, 100));
+        getContentPane().add(btnJogar, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 50, 180, 100));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel2.setText("Escolha uma das opções abaixo");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, -1, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, 30));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/trevo-4-folhas.jpg"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 410, 320));
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/mega-sena-background.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 420, 340));
 
         pack();
         setLocationRelativeTo(null);
@@ -111,6 +119,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnAnalisarResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalisarResultadosActionPerformed
