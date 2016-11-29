@@ -49,32 +49,49 @@ public class Resultados extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButtonVoltar = new javax.swing.JButton();
         jButtonAnalisarJogos = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
         jLabel1.setText("Resultados");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
         jLabelDadosDoBanco.setBackground(new java.awt.Color(255, 0, 255));
+        jLabelDadosDoBanco.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
         jLabelDadosDoBanco.setText("DADOS DO BANCO");
-        getContentPane().add(jLabelDadosDoBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 380, 150));
+        getContentPane().add(jLabelDadosDoBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 380, 170));
 
+        jLabel2.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
         jLabel2.setText("Ultimos Jogos");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
+        jButtonVoltar.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
+        jButtonVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/icone-voltar.png"))); // NOI18N
         jButtonVoltar.setText("Voltar");
         jButtonVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVoltarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 160, 60));
+        getContentPane().add(jButtonVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 160, 60));
 
-        jButtonAnalisarJogos.setText("Analisar Jogos");
-        getContentPane().add(jButtonAnalisarJogos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 160, 60));
+        jButtonAnalisarJogos.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
+        jButtonAnalisarJogos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/icone-ok.png"))); // NOI18N
+        jButtonAnalisarJogos.setText("Analisar");
+        getContentPane().add(jButtonAnalisarJogos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 160, 60));
 
-        setSize(new java.awt.Dimension(400, 320));
+        jLabel8.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        jLabel8.setText("Copyright © Vestindo Certo");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, -1, 20));
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/mega-sena-background.jpg"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 420, 340));
+
+        setSize(new java.awt.Dimension(400, 342));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -124,6 +141,8 @@ public class Resultados extends javax.swing.JFrame {
     private javax.swing.JButton jButtonVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelDadosDoBanco;
     // End of variables declaration//GEN-END:variables
 }

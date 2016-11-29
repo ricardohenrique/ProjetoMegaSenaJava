@@ -8,6 +8,7 @@ package Model;
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Ricardo Mota
@@ -38,7 +39,7 @@ public class Conexao {
             //Parâmetros da conexão (usuário e senha)
             //Atenção: COLOQUE AQUI O SEU USUÁRIO E A SUA SENHA!
             String usuario = "root";    //Usuário da base, criado anteriormente
-            String senha = "";   //Senha do usuário
+            String senha = "ricardo@123";   //Senha do usuário
  
             //seta a conexão:
             conexao = (Connection) DriverManager.getConnection(url, usuario, senha);
@@ -55,11 +56,11 @@ public class Conexao {
             return conexao;
  
         } catch (ClassNotFoundException e) {  //Caso não encontre o driver de conexão
-            System.out.println("Driver de conexão não encontrado.");
+            JOptionPane.showMessageDialog(null, "Driver de conexão não encontrado.", "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE);
             return null;
         } catch (SQLException e) { //Caso não consiga conectar
-            System.out.println("Falha na conexão: ");
-            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Falha na conexão: ", "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE);
             return null;
         }
     }

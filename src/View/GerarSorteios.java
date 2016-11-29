@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
 
 /**
  *
@@ -37,63 +39,48 @@ public class GerarSorteios extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jListSorteios = new javax.swing.JList<>();
         jToggleButtonGerarSorteios = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
         jLabel2.setText("Este é seu simulador de jogos da Mega Sena");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 26));
 
-        jToggleButtonVoltar.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jToggleButtonVoltar.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
+        jToggleButtonVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/icone-voltar.png"))); // NOI18N
         jToggleButtonVoltar.setText("Voltar");
         jToggleButtonVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButtonVoltarActionPerformed(evt);
             }
         });
+        getContentPane().add(jToggleButtonVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 230, 180, 50));
 
         jScrollPane1.setViewportView(jListSorteios);
 
-        jToggleButtonGerarSorteios.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 44, 380, 180));
+
+        jToggleButtonGerarSorteios.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
+        jToggleButtonGerarSorteios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/trevo-icone.png"))); // NOI18N
         jToggleButtonGerarSorteios.setText("Gerar Sorteios");
         jToggleButtonGerarSorteios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButtonGerarSorteiosActionPerformed(evt);
             }
         });
+        getContentPane().add(jToggleButtonGerarSorteios, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 180, 50));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jToggleButtonGerarSorteios, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jToggleButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel2)))
-                .addGap(0, 14, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButtonGerarSorteios, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12))
-        );
+        jLabel1.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        jLabel1.setText("Copyright © Vestindo Certo");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, -1, 20));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/mega-sena-background.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 420, 340));
 
         setSize(new java.awt.Dimension(400, 342));
         setLocationRelativeTo(null);
@@ -108,14 +95,18 @@ public class GerarSorteios extends javax.swing.JFrame {
 
     private void jToggleButtonGerarSorteiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonGerarSorteiosActionPerformed
         // TODO add your handling code here:
+        //ERROR_MESSAGE, PLAIN_MESSAGE, INFORMATION_MESSAGE
         DefaultListModel dml = new DefaultListModel();
         Sorteios sorteios = new Sorteios();
         try {
             dml = sorteios.gerarSorteios();
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Algo deu errado, tente novamente", "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(GerarSorteios.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            jListSorteios.setModel(dml);
+            JOptionPane.showMessageDialog(null, "Lista gerada com sucesso!", null, JOptionPane.INFORMATION_MESSAGE);
         }
-        jListSorteios.setModel(dml);
     }//GEN-LAST:event_jToggleButtonGerarSorteiosActionPerformed
 
     /**
@@ -161,7 +152,9 @@ public class GerarSorteios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JList<String> jListSorteios;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToggleButton jToggleButtonGerarSorteios;

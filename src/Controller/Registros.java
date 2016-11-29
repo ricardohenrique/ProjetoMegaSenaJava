@@ -85,11 +85,77 @@ public class Registros {
     }
     
     public List<Registros> getRegistros(){
-        String dados[] = new String[7];
         RegistroGet registroGet = new RegistroGet();
         
         List<Registros> listaDeRegistros = new ArrayList<Registros>();
         listaDeRegistros = registroGet.getRegistros();
         return listaDeRegistros;
     }
+    
+    public String validateRegistro(String dados[]){
+        String strReturn = ""; //String de retorno final
+        
+        strReturn += this.validateRegistroPreenchimento(dados);
+        if(!"".equals(strReturn)) return strReturn;
+        strReturn += this.validateRegistroNumbers(dados);
+        if(!"".equals(strReturn)) return strReturn;
+        strReturn += this.validateRegistroRepetidos(dados);
+        
+        return strReturn;
+    }
+    
+    
+    public String validateRegistroPreenchimento(String dados[]){
+        String strReturn = ""; //String de retorno final
+        //Verificar se o nome está vazio
+        if("".equals(dados[0])){
+            strReturn += "Nome vazio; ";
+        }
+        
+        //verificar se foi preenchido todas as dezenas
+        for (int i = 0; i < 6; i++) {
+            if("".equals(dados[i+1])){
+                strReturn += "Você deve preencher todas as dezenas; ";
+                break;
+            }
+        }
+        
+        return strReturn;
+    }
+    
+    public String validateRegistroNumbers(String dados[]){
+        String strReturn = ""; //String de retorno final
+        int numeros[] = new int[6]; //Vetor onde vai ficar os numeros jogados
+        
+        //Laço para preencher o vetor de inteiro com os números
+        try {
+            for (int i = 0; i < 6; i++)
+                numeros[i] = Integer.parseInt(dados[i+1]);
+        } catch (NumberFormatException ex) {
+            strReturn += "São aceito somente NUMEROS nas dezenas; ";
+        }
+        
+        return strReturn;
+    }
+    
+    public String validateRegistroRepetidos(String dados[]){
+        String strReturn = ""; //String de retorno final
+        int numeros[] = new int[6]; //Vetor onde vai ficar os numeros jogados
+
+        for (int i = 0; i < 6; i++)
+            numeros[i] = Integer.parseInt(dados[i+1]);
+
+        //Verificar se existem números repitidos no vetor
+        for (int i = 0; i < numeros.length; i++) { 
+            for (int j = i + 1 ; j < numeros.length; j++) { 
+                if (numeros[i] == numeros[j]) { 
+                    strReturn += "Números repetidos; ";
+                    return strReturn;
+                } 
+            } 
+        }
+        
+        return strReturn;
+    }
+
 }

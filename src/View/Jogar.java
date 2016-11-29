@@ -8,6 +8,7 @@ import Controller.Registros;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,16 +44,21 @@ public class Jogar extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         btnVoltar = new javax.swing.JButton();
         jLabelControle = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabelJogadorN.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
         jLabelJogadorN.setText("Jogador 01");
         getContentPane().add(jLabelJogadorN, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
 
-        jLabel2.setText("Nome:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
+        jLabel2.setText("Dezenas");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
 
+        txtNome.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
@@ -60,19 +66,24 @@ public class Jogar extends javax.swing.JFrame {
         });
         getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 360, -1));
 
+        jLabel8.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
         jLabel8.setText("Copyright © Vestindo Certo");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, -1, -1));
 
-        btnJogar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnJogar.setText("Próximo jogo");
+        btnJogar.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
+        btnJogar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/jogar-icone.png"))); // NOI18N
+        btnJogar.setText("Jogar");
         btnJogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnJogarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnJogar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 150, 54));
+        getContentPane().add(btnJogar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 150, 60));
+
+        jTextFieldDezena03.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
         getContentPane().add(jTextFieldDezena03, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 40, 30));
 
+        jTextFieldDezena01.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
         jTextFieldDezena01.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldDezena01ActionPerformed(evt);
@@ -80,6 +91,7 @@ public class Jogar extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldDezena01, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 40, 30));
 
+        jTextFieldDezena02.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
         jTextFieldDezena02.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldDezena02ActionPerformed(evt);
@@ -87,22 +99,38 @@ public class Jogar extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldDezena02, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 40, 30));
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 40, 30));
+
+        jTextFieldDezena06.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
         getContentPane().add(jTextFieldDezena06, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 40, 30));
+
+        jTextFieldDezena04.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
         getContentPane().add(jTextFieldDezena04, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 40, 30));
+
+        jTextFieldDezena05.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
         getContentPane().add(jTextFieldDezena05, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 40, 30));
         getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 40, 30));
 
-        btnVoltar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnVoltar.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
+        btnVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/icone-voltar.png"))); // NOI18N
         btnVoltar.setText("Voltar");
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVoltarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 150, 54));
+        getContentPane().add(btnVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 150, 60));
 
+        jLabelControle.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
         jLabelControle.setText("1/3");
         getContentPane().add(jLabelControle, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, -1, 20));
+
+        jLabel3.setFont(new java.awt.Font("Lucida Sans", 0, 16)); // NOI18N
+        jLabel3.setText("Nome:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/mega-sena-background.jpg"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 420, 340));
 
         setSize(new java.awt.Dimension(400, 342));
         setLocationRelativeTo(null);
@@ -113,8 +141,12 @@ public class Jogar extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNomeActionPerformed
    
     private void btnJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJogarActionPerformed
-        // TODO add your handling code here:
+        // setado as variaveis e objetos
         String dados[] = new String[7];
+        Registros registros = new Registros();
+        String controle, controleRepetidos;
+        
+        // PEGO TODOS OS DADOS DO JFRAME
         dados[0] = txtNome.getText();
         dados[1] = jTextFieldDezena01.getText();
         dados[2] = jTextFieldDezena02.getText();
@@ -123,32 +155,37 @@ public class Jogar extends javax.swing.JFrame {
         dados[5] = jTextFieldDezena05.getText();
         dados[6] = jTextFieldDezena06.getText();
         
-        Registros registros = new Registros();
-        
-        registros.setNome(dados[0]);
-        registros.setDezena01(Integer.parseInt(dados[1]));
-        registros.setDezena02(Integer.parseInt(dados[2]));
-        registros.setDezena03(Integer.parseInt(dados[3]));
-        registros.setDezena04(Integer.parseInt(dados[4]));
-        registros.setDezena05(Integer.parseInt(dados[5]));
-        registros.setDezena06(Integer.parseInt(dados[6]));
-        
-        try {
-            registros.store();
-        } catch (SQLException ex) {
-            Logger.getLogger(Jogar.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        if(jLabelJogadorN.getText() == "Jogador 01" && jLabelControle.getText() == "1/3"){
-            jLabelJogadorN.setText("Jogador 02");
-            jLabelControle.setText("2/3");
-        }else if(jLabelJogadorN.getText() == "Jogador 02" && jLabelControle.getText() == "2/3"){
-            jLabelJogadorN.setText("Jogador 03");
-            jLabelControle.setText("3/3");
-            btnJogar.setText("Finalizar");
+        controle = registros.validateRegistro(dados);
+        if("".equals(controle)){
+            JOptionPane.showMessageDialog(null, "OK ", "INFORMATION_MESSAGE", JOptionPane.INFORMATION_MESSAGE);
         }else{
-            btnJogar.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Algo deu errado: "+controle, "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE);
         }
+        //INSTANCIO O OBJETO DE REGISTRO COM OS DADOS DO JFRAME
+//        registros.setNome(dados[0]);
+//        registros.setDezena01(Integer.parseInt(dados[1]));
+//        registros.setDezena02(Integer.parseInt(dados[2]));
+//        registros.setDezena03(Integer.parseInt(dados[3]));
+//        registros.setDezena04(Integer.parseInt(dados[4]));
+//        registros.setDezena05(Integer.parseInt(dados[5]));
+//        registros.setDezena06(Integer.parseInt(dados[6]));
+        
+//        try {
+//            registros.store();
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Jogar.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        
+//        if(jLabelJogadorN.getText() == "Jogador 01" && jLabelControle.getText() == "1/3"){
+//            jLabelJogadorN.setText("Jogador 02");
+//            jLabelControle.setText("2/3");
+//        }else if(jLabelJogadorN.getText() == "Jogador 02" && jLabelControle.getText() == "2/3"){
+//            jLabelJogadorN.setText("Jogador 03");
+//            jLabelControle.setText("3/3");
+//            btnJogar.setText("Finalizar");
+//        }else{
+//            btnJogar.setVisible(false);
+//        }
         
     }//GEN-LAST:event_btnJogarActionPerformed
 
@@ -207,6 +244,8 @@ public class Jogar extends javax.swing.JFrame {
     private javax.swing.JButton btnJogar;
     private javax.swing.JButton btnVoltar;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelControle;
     private javax.swing.JLabel jLabelJogadorN;
