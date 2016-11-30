@@ -5,10 +5,13 @@
  */
 package Controller;
 
+import Model.ModelRegistro;
 import java.util.Random;
 import javax.swing.DefaultListModel;
 import Model.ModelSorteio;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -130,5 +133,13 @@ public class ControllerSorteios {
 
     public void setDezena06(int dezena06) {
         this.dezena06 = dezena06;
+    }
+    
+    public List<ControllerSorteios> getSorteios(){
+        ModelSorteio registroGet = new ModelSorteio();
+        
+        List<ControllerSorteios> listaDeSorteios = new ArrayList<ControllerSorteios>();
+        listaDeSorteios = registroGet.getSorteios();
+        return listaDeSorteios;
     }
 }

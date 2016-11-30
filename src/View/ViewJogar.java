@@ -132,7 +132,7 @@ public class ViewJogar extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/mega-sena-background.jpg"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 420, 340));
 
-        setSize(new java.awt.Dimension(425, 362));
+        setSize(new java.awt.Dimension(409, 345));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

@@ -82,7 +82,7 @@ public class ViewGerarSorteios extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/mega-sena-background.jpg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 420, 340));
 
-        setSize(new java.awt.Dimension(422, 360));
+        setSize(new java.awt.Dimension(410, 347));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -94,7 +94,6 @@ public class ViewGerarSorteios extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButtonVoltarActionPerformed
 
     private void jToggleButtonGerarSorteiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonGerarSorteiosActionPerformed
-        // TODO add your handling code here:
         //ERROR_MESSAGE, PLAIN_MESSAGE, INFORMATION_MESSAGE
         DefaultListModel dml = new DefaultListModel();
         ControllerSorteios sorteios = new ControllerSorteios();

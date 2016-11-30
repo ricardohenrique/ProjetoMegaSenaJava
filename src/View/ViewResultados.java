@@ -5,6 +5,7 @@
  */
 package View;
 import Controller.ControllerRegistros;
+import Controller.ControllerSorteios;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -35,7 +36,12 @@ public class ViewResultados extends javax.swing.JFrame {
             resultadoFinal += "<b>" + nome + "</b> <blockquote>" + jogo + "</blockquote>";
             if(count == 3) break;
         }
-        jLabelDadosDoBanco.setText("<html><body>"+resultadoFinal+"</body></html>");
+        if (count > 0) {
+            jLabelDadosDoBanco.setText("<html><body>"+resultadoFinal+"</body></html>");
+        }else{
+            jLabelDadosDoBanco.setText("<html><body>Você não tem nenhum jogo registrado.</body></html>");
+        }
+        
     }
 
     /**
@@ -99,7 +105,7 @@ public class ViewResultados extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/mega-sena-background.jpg"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 420, 340));
 
-        setSize(new java.awt.Dimension(424, 361));
+        setSize(new java.awt.Dimension(409, 347));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -110,12 +116,25 @@ public class ViewResultados extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVoltarActionPerformed
 
     private void jButtonAnalisarJogosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnalisarJogosActionPerformed
-        int count = 0;
+        //Váriaveis de apoios
+        int count = 0, i = 0, controlePlayrer01 = 0, totalPlayer01 = 0;
         int jogo[][] = new int[3][6];
-        List<ControllerRegistros> listaDeRegistros = new ArrayList<ControllerRegistros>();
-        ControllerRegistros registros = new ControllerRegistros();
-        listaDeRegistros = registros.getRegistros();
+        int matrizSorteios[][] = new int[3000][6];
+        String strPlayer01 = "";
         
+        //Listas setadas
+        List<ControllerRegistros> listaDeRegistros = new ArrayList<ControllerRegistros>();
+        List<ControllerSorteios> listaDeSorteios = new ArrayList<ControllerSorteios>();
+        
+        //Controllers respectivos
+        ControllerRegistros registros = new ControllerRegistros();
+        ControllerSorteios sorteios = new ControllerSorteios();
+        
+        //Listas com dados
+        listaDeRegistros = registros.getRegistros();
+        listaDeSorteios = sorteios.getSorteios();
+        
+        //Setado jogos de registros
         for (ControllerRegistros registrosLocal : listaDeRegistros) { //Iterator: Para cada carro na list de carros...
             jogo[count][0] = registrosLocal.getDezena01(); 
             jogo[count][1] = registrosLocal.getDezena02();
@@ -127,9 +146,54 @@ public class ViewResultados extends javax.swing.JFrame {
             if(count == 3) break;
         }
         
-        for (int i = 0; i < 3; i++) {
-            System.out.println(jogo[i][0] + " | " + jogo[i][1] + " | " + jogo[i][2] + " | " + jogo[i][3] + " | " + jogo[i][4] + " | " + jogo[i][05] + " | ");
+        //Lista dos sorteios
+        count = 0;
+        for (ControllerSorteios sorteiosLocal : listaDeSorteios) { //Iterator: Para cada carro na list de carros...
+            matrizSorteios[count][0] = sorteiosLocal.getDezena01(); 
+            matrizSorteios[count][1] = sorteiosLocal.getDezena02();
+            matrizSorteios[count][2] = sorteiosLocal.getDezena03();
+            matrizSorteios[count][3] = sorteiosLocal.getDezena04();
+            matrizSorteios[count][4] = sorteiosLocal.getDezena05();
+            matrizSorteios[count][5] = sorteiosLocal.getDezena06();
+            count++;
         }
+        
+        int countJogadores = 0; String strJogo, resultadoFinal = "";
+        for (ControllerRegistros registrosLocal : listaDeRegistros) {
+            controlePlayrer01 = 0;
+            totalPlayer01 = 0;
+            for (i = 0; i < 3000; i++) {
+                for (int j = 0; j < 6; j++) {
+                    for (int k = 0; k < 6; k++) {
+                        if(jogo[countJogadores][j] == matrizSorteios[i][k]){
+                            controlePlayrer01++;
+                        }
+                    }   
+                }
+                strJogo = (
+                        registrosLocal.getDezena01() + " " + 
+                        registrosLocal.getDezena02() + " " + 
+                        registrosLocal.getDezena03() + " " + 
+                        registrosLocal.getDezena04() + " " + 
+                        registrosLocal.getDezena05() + " " + 
+                        registrosLocal.getDezena06()
+                    );
+                if(controlePlayrer01 > totalPlayer01){
+                    totalPlayer01 = controlePlayrer01;
+                    strPlayer01 = "<b>"+registrosLocal.getNome()+" - "+strJogo+"</b>, <blockquote>no jogo " + (i+1) + " você acertou " + totalPlayer01 + " números</blockquote>";
+                }
+                //resultadoFinal += "<b>" + registrosLocal.getNome() + "</b> <blockquote>" + strJogo + " - No jogo"+(i+1)+" você acertou " + totalPlayer01 + " números</blockquote>";
+                controlePlayrer01 = 0;
+                //System.out.println("Sorteio "+i+": "+matrizSorteios[i][0] + " | " + matrizSorteios[i][1] + " | " + matrizSorteios[i][2] + " | " + matrizSorteios[i][3] + " | " + matrizSorteios[i][4] + " | " + matrizSorteios[i][05] + " | ");
+            }
+            resultadoFinal += strPlayer01;
+            System.out.println(strPlayer01);
+            
+            countJogadores++;
+            if(countJogadores == 3) break;
+        }
+        
+        jLabelDadosDoBanco.setText("<html><body>"+resultadoFinal+"</body></html>");
     }//GEN-LAST:event_jButtonAnalisarJogosActionPerformed
 
     /**
