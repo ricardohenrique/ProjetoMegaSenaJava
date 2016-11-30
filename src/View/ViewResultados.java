@@ -17,7 +17,7 @@ public class ViewResultados extends javax.swing.JFrame {
     public ViewResultados(){
         initComponents();
         int count = 0;
-        String nome = "", jogo = "", resultadoFinal = "";
+        String nome, jogo, resultadoFinal = "";
         List<ControllerRegistros> listaDeRegistros = new ArrayList<ControllerRegistros>();
         ControllerRegistros registros = new ControllerRegistros();
         listaDeRegistros = registros.getRegistros();
@@ -41,7 +41,6 @@ public class ViewResultados extends javax.swing.JFrame {
         }else{
             jLabelDadosDoBanco.setText("<html><body>Você não tem nenhum jogo registrado.</body></html>");
         }
-        
     }
 
     /**
@@ -116,12 +115,6 @@ public class ViewResultados extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVoltarActionPerformed
 
     private void jButtonAnalisarJogosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnalisarJogosActionPerformed
-        //Váriaveis de apoios
-        int count = 0, i = 0, controlePlayrer01 = 0, totalPlayer01 = 0;
-        int jogo[][] = new int[3][6];
-        int matrizSorteios[][] = new int[3000][6];
-        String strPlayer01 = "";
-        
         //Listas setadas
         List<ControllerRegistros> listaDeRegistros = new ArrayList<ControllerRegistros>();
         List<ControllerSorteios> listaDeSorteios = new ArrayList<ControllerSorteios>();
@@ -135,7 +128,9 @@ public class ViewResultados extends javax.swing.JFrame {
         listaDeSorteios = sorteios.getSorteios();
         
         //Setado jogos de registros
-        for (ControllerRegistros registrosLocal : listaDeRegistros) { //Iterator: Para cada carro na list de carros...
+        int count = 0;
+        int jogo[][] = new int[3][6];
+        for (ControllerRegistros registrosLocal : listaDeRegistros) {
             jogo[count][0] = registrosLocal.getDezena01(); 
             jogo[count][1] = registrosLocal.getDezena02();
             jogo[count][2] = registrosLocal.getDezena03();
@@ -148,6 +143,7 @@ public class ViewResultados extends javax.swing.JFrame {
         
         //Lista dos sorteios
         count = 0;
+        int matrizSorteios[][] = new int[3000][6];
         for (ControllerSorteios sorteiosLocal : listaDeSorteios) { //Iterator: Para cada carro na list de carros...
             matrizSorteios[count][0] = sorteiosLocal.getDezena01(); 
             matrizSorteios[count][1] = sorteiosLocal.getDezena02();
@@ -158,15 +154,17 @@ public class ViewResultados extends javax.swing.JFrame {
             count++;
         }
         
-        int countJogadores = 0; String strJogo, resultadoFinal = "";
+        //Validação e verifição
+        int controlePlayrer, totalPlayer, countJogadores = 0;
+        String strJogo, resultadoFinal = "", strPlayer = "";
         for (ControllerRegistros registrosLocal : listaDeRegistros) {
-            controlePlayrer01 = 0;
-            totalPlayer01 = 0;
-            for (i = 0; i < 3000; i++) {
+            controlePlayrer = 0;
+            totalPlayer = 0;
+            for (int i = 0; i < 3000; i++) {
                 for (int j = 0; j < 6; j++) {
                     for (int k = 0; k < 6; k++) {
                         if(jogo[countJogadores][j] == matrizSorteios[i][k]){
-                            controlePlayrer01++;
+                            controlePlayrer++;
                         }
                     }   
                 }
@@ -178,16 +176,14 @@ public class ViewResultados extends javax.swing.JFrame {
                         registrosLocal.getDezena05() + " " + 
                         registrosLocal.getDezena06()
                     );
-                if(controlePlayrer01 > totalPlayer01){
-                    totalPlayer01 = controlePlayrer01;
-                    strPlayer01 = "<b>"+registrosLocal.getNome()+" - "+strJogo+"</b>, <blockquote>no jogo " + (i+1) + " você acertou " + totalPlayer01 + " números</blockquote>";
+                if(controlePlayrer > totalPlayer){
+                    totalPlayer = controlePlayrer;
+                    strPlayer = "<b>"+registrosLocal.getNome()+" - "+strJogo+"</b>, <blockquote>no jogo " + (i+1) + " você acertou " + totalPlayer + " números</blockquote>";
                 }
-                //resultadoFinal += "<b>" + registrosLocal.getNome() + "</b> <blockquote>" + strJogo + " - No jogo"+(i+1)+" você acertou " + totalPlayer01 + " números</blockquote>";
-                controlePlayrer01 = 0;
-                //System.out.println("Sorteio "+i+": "+matrizSorteios[i][0] + " | " + matrizSorteios[i][1] + " | " + matrizSorteios[i][2] + " | " + matrizSorteios[i][3] + " | " + matrizSorteios[i][4] + " | " + matrizSorteios[i][05] + " | ");
+                controlePlayrer = 0;
             }
-            resultadoFinal += strPlayer01;
-            System.out.println(strPlayer01);
+            resultadoFinal += strPlayer;
+            System.out.println(strPlayer);
             
             countJogadores++;
             if(countJogadores == 3) break;

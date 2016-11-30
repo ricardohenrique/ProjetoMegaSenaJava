@@ -184,8 +184,6 @@ public class ViewJogar extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Agora você pode verificar os resultados!", null, JOptionPane.INFORMATION_MESSAGE);
                 }
             }
-
-        
         }else{
             JOptionPane.showMessageDialog(null, "Algo deu errado: "+controle, "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE);
         }
