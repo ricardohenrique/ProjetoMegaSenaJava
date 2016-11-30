@@ -47,7 +47,6 @@ public class ModelRegistro {
         }
     }
 
-   //Método que retorna a lsta de carros, com todos os carros do sistema
     public List<ControllerRegistros> getRegistros() {
  
         try {

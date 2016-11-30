@@ -5,14 +5,57 @@
  */
 package Model;
 
+import Controller.ControllerSorteios;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Ricardo Mota
  */
 public class ModelSorteio {
+    public List<ControllerSorteios> getSorteios() {
+ 
+        try {
+            ModelConexao con = new ModelConexao();
+            con.getConexao();
+            
+            String sql = "select * from sorteios";
+            
+            PreparedStatement comando = con.getConexao().prepareStatement(sql);
+            ResultSet resultado = comando.executeQuery();
+ 
+            List<ControllerSorteios> listaDeSorteios = new ArrayList<ControllerSorteios>();
+ 
+            while (resultado.next()) {
+                ControllerSorteios sorteios = new ControllerSorteios();
+                sorteios.setId(resultado.getInt("id"));
+                sorteios.setDezena01(resultado.getInt("dezena_01"));
+                sorteios.setDezena02(resultado.getInt("dezena_02"));
+                sorteios.setDezena03(resultado.getInt("dezena_03"));
+                sorteios.setDezena04(resultado.getInt("dezena_04"));
+                sorteios.setDezena05(resultado.getInt("dezena_05"));
+                sorteios.setDezena06(resultado.getInt("dezena_06"));
+ 
+                listaDeSorteios.add(sorteios);
+            }
+ 
+            //Ao terminar o laço, fecha a conexão
+            resultado.close();
+            comando.close();
+            con.getConexao().close();
+ 
+            //Retorna a lista de carros
+            return listaDeSorteios;
+ 
+        } catch (Exception e) { //Se der algum exessão...
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }  
 
     public void insereSorteio(int jogos[][]) throws SQLException {
         String sql = "";
