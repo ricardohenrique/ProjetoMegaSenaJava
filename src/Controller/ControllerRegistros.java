@@ -5,8 +5,7 @@
  */
 package Controller;
 
-import Model.RegistroStore;
-import Model.RegistroGet;
+import Model.ModelRegistro;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -80,12 +79,12 @@ public class ControllerRegistros {
     }
     
     public void store() throws SQLException{
-        RegistroStore registroStore = new RegistroStore();
-        registroStore.insereRegistro(this);
+        ModelRegistro modelRegistro = new ModelRegistro();
+        modelRegistro.insereRegistro(this);
     }
     
     public List<ControllerRegistros> getRegistros(){
-        RegistroGet registroGet = new RegistroGet();
+        ModelRegistro registroGet = new ModelRegistro();
         
         List<ControllerRegistros> listaDeRegistros = new ArrayList<ControllerRegistros>();
         listaDeRegistros = registroGet.getRegistros();
