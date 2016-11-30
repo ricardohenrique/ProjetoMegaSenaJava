@@ -183,7 +183,7 @@ public class ViewResultados extends javax.swing.JFrame {
                 controlePlayrer = 0;
             }
             resultadoFinal += strPlayer;
-            System.out.println(strPlayer);
+            //System.out.println(strPlayer);
             
             countJogadores++;
             if(countJogadores == 3) break;
