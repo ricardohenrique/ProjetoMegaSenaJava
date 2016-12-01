@@ -160,7 +160,7 @@ public class ViewResultados extends javax.swing.JFrame {
         for (ControllerRegistros registrosLocal : listaDeRegistros) {
             controlePlayrer = 0;
             totalPlayer = 0;
-            for (int i = 0; i < 3000; i++) {
+            for (int i = 0; i < 5; i++) {
                 for (int j = 0; j < 6; j++) {
                     for (int k = 0; k < 6; k++) {
                         if(jogo[countJogadores][j] == matrizSorteios[i][k]){
@@ -176,6 +176,7 @@ public class ViewResultados extends javax.swing.JFrame {
                         registrosLocal.getDezena05() + " " + 
                         registrosLocal.getDezena06()
                     );
+                //System.out.println(strJogo);
                 if(controlePlayrer > totalPlayer){
                     totalPlayer = controlePlayrer;
                     strPlayer = "<b>"+registrosLocal.getNome()+" - "+strJogo+"</b>, <blockquote>no jogo " + (i+1) + " você acertou " + totalPlayer + " números</blockquote>";

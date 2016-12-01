@@ -23,7 +23,7 @@ public class ModelSorteio {
             ModelConexao con = new ModelConexao();
             con.getConexao();
             
-            String sql = "select * from sorteios";
+            String sql = "select * from sorteios order by id";
             
             PreparedStatement comando = con.getConexao().prepareStatement(sql);
             ResultSet resultado = comando.executeQuery();
