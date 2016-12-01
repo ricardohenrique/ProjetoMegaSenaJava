@@ -144,18 +144,12 @@ public class ViewJogar extends javax.swing.JFrame {
         // setado as variaveis e objetos
         String dados[] = new String[7];
         ControllerRegistros registros = new ControllerRegistros();
-        String controle, controleRepetidos;
+        String controle;
         
         // PEGO TODOS OS DADOS DO JFRAME
-        dados[0] = txtNome.getText();
-        dados[1] = jTextFieldDezena01.getText();
-        dados[2] = jTextFieldDezena02.getText();
-        dados[3] = jTextFieldDezena03.getText();
-        dados[4] = jTextFieldDezena04.getText();
-        dados[5] = jTextFieldDezena05.getText();
-        dados[6] = jTextFieldDezena06.getText();
-        
+        dados = this.setDadosJframe(dados);
         controle = registros.validateRegistro(dados);
+        
         if("".equals(controle)){
             //INSTANCIO O OBJETO DE REGISTRO COM OS DADOS DO JFRAME
             registros.setNome(dados[0]);
@@ -175,10 +169,12 @@ public class ViewJogar extends javax.swing.JFrame {
                 if(jLabelJogadorN.getText() == "Jogador 01" && jLabelControle.getText() == "1/3"){
                     jLabelJogadorN.setText("Jogador 02");
                     jLabelControle.setText("2/3");
+                    this.clearDadosJframe();
                 }else if(jLabelJogadorN.getText() == "Jogador 02" && jLabelControle.getText() == "2/3"){
                     jLabelJogadorN.setText("Jogador 03");
                     jLabelControle.setText("3/3");
                     btnJogar.setText("Finalizar");
+                    this.clearDadosJframe();
                 }else{
                     btnJogar.setVisible(false);
                     JOptionPane.showMessageDialog(null, "Agora você pode verificar os resultados!", null, JOptionPane.INFORMATION_MESSAGE);
@@ -189,6 +185,28 @@ public class ViewJogar extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnJogarActionPerformed
 
+    public String[] setDadosJframe(String dados[]){
+        dados[0] = txtNome.getText();
+        dados[1] = jTextFieldDezena01.getText();
+        dados[2] = jTextFieldDezena02.getText();
+        dados[3] = jTextFieldDezena03.getText();
+        dados[4] = jTextFieldDezena04.getText();
+        dados[5] = jTextFieldDezena05.getText();
+        dados[6] = jTextFieldDezena06.getText();
+        return dados;
+    }
+    
+    public void clearDadosJframe(){
+        txtNome.setText("");
+        jTextFieldDezena01.setText("");
+        jTextFieldDezena02.setText("");
+        jTextFieldDezena03.setText("");
+        jTextFieldDezena04.setText("");
+        jTextFieldDezena05.setText("");
+        jTextFieldDezena06.setText("");
+        txtNome.requestFocus();
+    }
+    
     private void jTextFieldDezena01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDezena01ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldDezena01ActionPerformed
