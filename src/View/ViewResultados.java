@@ -160,7 +160,7 @@ public class ViewResultados extends javax.swing.JFrame {
         for (ControllerRegistros registrosLocal : listaDeRegistros) {
             controlePlayrer = 0;
             totalPlayer = 0;
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 3000; i++) {
                 for (int j = 0; j < 6; j++) {
                     for (int k = 0; k < 6; k++) {
                         if(jogo[countJogadores][j] == matrizSorteios[i][k]){
