@@ -101,10 +101,10 @@ public class ViewResultados extends javax.swing.JFrame {
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, -1, 20));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/mega-sena-background.jpg"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 420, 340));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/lottery-draw-branco.jpg"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 420, 350));
 
-        setSize(new java.awt.Dimension(409, 347));
+        setSize(new java.awt.Dimension(420, 367));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

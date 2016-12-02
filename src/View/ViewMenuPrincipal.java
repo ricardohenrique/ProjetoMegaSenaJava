@@ -97,7 +97,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, 30));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/mega-sena-background.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/lottery-draw-branco.jpg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 410, 310));
 
         pack();

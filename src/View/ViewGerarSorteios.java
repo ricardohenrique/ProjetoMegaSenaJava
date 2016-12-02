@@ -78,10 +78,10 @@ public class ViewGerarSorteios extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, -1, 20));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/mega-sena-background.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/lottery-draw-branco.jpg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 420, 340));
 
-        setSize(new java.awt.Dimension(410, 347));
+        setSize(new java.awt.Dimension(423, 360));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
